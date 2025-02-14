@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آموزش CCU</title>
+    <!-- لینک Font-Awesome جهت استفاده از آیکون‌ها -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- استایل‌های بهبود یافته: مناسب اندروید، طوسی‌های ملایم و رنگ‌های جذاب -->
+    <style>
+      /* استایل‌های پایه */
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: 'Tahoma', sans-serif;
+        background-color: #f0f4f8;
+        color: #333;
+        line-height: 1.6;
+      }
+      
+      /* هدر با گرادیانت ملایم */
+      header {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        padding: 15px 10px;
+        color: #fff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+      .logo i {
+        font-size: 32px;
+        margin-left: 10px;
+      }
+      .logo h1 {
+        font-size: 22px;
+        margin: 0;
+      }
+      
+      /* منو اصلی */
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 10px 0 0 0;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      nav li {
+        position: relative;
+        margin: 5px 10px;
+      }
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 15px;
+        padding: 6px 8px;
+        border-radius: 4px;
+        transition: background 0.3s;
+      }
+      nav a:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+      /* زیرمنوها */
+      nav li ul {
+        display: none;
+        position: absolute;
+        background: #00bcd4;
+        padding: 8px;
+        border-radius: 4px;
+        top: 36px;
+        right: 0;
+        z-index: 1000;
+        min-width: 150px;
+      }
+      nav li:hover > ul {
+        display: block;
+      }
+      nav li ul li {
+        margin: 4px 0;
+      }
+      nav li ul a {
+        font-size: 14px;
+        padding: 5px 8px;
+      }
+
+      /* بخش اصلی محتوا */
+      main {
+        padding: 20px;
+        background-color: #fff;
+        margin: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      }
+      #contentArea section {
+        margin-bottom: 20px;
+      }
+      #contentArea h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: #00796b;
+      }
+      #contentArea p, #contentArea ul, #contentArea ol {
+        font-size: 16px;
+      }
+      #contentArea ul {
+        padding-inline-start: 20px;
+      }
+
+      /* فوتر */
+      footer {
+        text-align: center;
+        padding: 12px;
+        background: #eceff1;
+        color: #555;
+        font-size: 14px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+      
+      /* پیام خطا */
+      .error {
+        background-color: #ffcccb;
+        color: #a94442;
+        border: 1px solid #f5c6cb;
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 4px;
+      }
+      
+      /* ریسپانسیو */
+      @media (max-width: 600px) {
+        header, main, footer {
+          padding: 10px;
+        }
+        .logo h1 {
+          font-size: 20px;
+        }
+        nav ul {
+          flex-direction: column;
+        }
+        nav li {
+          margin: 5px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- هدر شامل لوگو و منو -->
+    <header>
+      <div class="logo">
+        <i class="fas fa-heartbeat"></i>
+        <h1>آموزش CCU</h1>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="general.html"><i class="fas fa-info-circle"></i> کلیات</a>
+            <ul>
+              <li><a href="intro.html"><i class="fas fa-star"></i> معرفی CCU</a></li>
+              <li><a href="equipment.html"><i class="fas fa-tools"></i> تجهیزات CCU</a></li>
+              <li><a href="diseases.html"><i class="fas fa-heart-broken"></i> بیماری‌های شایع</a></li>
+              <li><a href="staff.html"><i class="fas fa-users"></i> پرسنل CCU</a></li>
+              <li><a href="admission.html"><i class="fas fa-user-plus"></i> پذیرش بیمار</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="nurses.html"><i class="fas fa-user-nurse"></i> پرستاران</a>
+            <ul>
+              <li><a href="monitoring.html"><i class="fas fa-eye"></i> پایش بیمار</a></li>
+              <li><a href="medications.html"><i class="fas fa-pills"></i> داروها</a></li>
+              <li><a href="procedures.html"><i class="fas fa-syringe"></i> پروسیجرها</a></li>
+              <li><a href="emergency.html"><i class="fas fa-ambulance"></i> فوریت‌ها</a></li>
+              <li><a href="communication.html"><i class="fas fa-comments"></i> ارتباط با بیمار و همراه</a></li>
+              <li><a href="documentation.html"><i class="fas fa-file-alt"></i> مستندسازی</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="doctors.html"><i class="fas fa-user-md"></i> پزشکان</a>
+            <ul>
+              <li><a href="diagnosis.html"><i class="fas fa-diagnoses"></i> تشخیص</a></li>
+              <li><a href="treatment.html"><i class="fas fa-briefcase-medical"></i> درمان</a></li>
+              <li><a href="protocols.html"><i class="fas fa-file-medical"></i> پروتکل‌ها</a></li>
+              <li><a href="advanced.html"><i class="fas fa-graduation-cap"></i> مباحث پیشرفته</a></li>
+              <li><a href="consultation.html"><i class="fas fa-user-friends"></i> مشاوره</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="videos.html"><i class="fas fa-film"></i> فیلم‌های آموزشی</a>
+            <ul>
+              <li><a href="ecg-videos.html"><i class="fas fa-heartbeat"></i> نوار قلب</a></li>
+              <li><a href="procedure-videos.html"><i class="fas fa-procedures"></i> پروسیجرها</a></li>
+              <li><a href="case-studies.html"><i class="fas fa-briefcase-medical"></i> کیس‌های واقعی</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="ecg.html"><i class="fas fa-heart"></i> نوار قلب</a>
+            <ul>
+              <li><a href="ecg-basics.html"><i class="fas fa-wave-square"></i> مبانی نوار قلب</a></li>
+              <li><a href="rhythms.html"><i class="fas fa-chart-line"></i> ریتم‌های قلبی</a></li>
+              <li><a href="ecg-interpretation.html"><i class="fas fa-book-medical"></i> تفسیر نوار قلب</a></li>
+              <li><a href="ecg-quiz.html"><i class="fas fa-question-circle"></i> آزمون نوار قلب</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- بخش اصلی محتوا -->
+    <main>
+      <div id="contentArea">
+        <section>
+          <h2><i class="fas fa-home"></i> صفحه اصلی</h2>
+          <p>
+            به سامانه آموزش CCU خوش آمدید. از منوی بالا موضوع مورد نظر خود را انتخاب نمایید.
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <!-- فوتر -->
+    <footer>
+      <p>تمامی حقوق محفوظ است.</p>
+    </footer>
+
+    <!-- اسکریپت‌های بارگذاری داینامیک محتوا -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        loadContent('general.html');
+      });
+      
+      document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const page = this.getAttribute('href');
+          loadContent(page);
+        });
+      });
+      
+      async function loadContent(page) {
+        try {
+          const response = await fetch(`pages/${page}`);
+          if (!response.ok) {
+            throw new Error('صفحه مورد نظر یافت نشد (404)');
+          }
+          const content = await response.text();
+          document.getElementById('contentArea').innerHTML = content;
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } catch (error) {
+          showError(error);
+        }
+      }
+      
+      function showError(error) {
+        const errorHTML = `
+          <div class="error">
+            <h3>خطا در بارگذاری محتوا</h3>
+            <p>${error.message}</p>
+            <p>لطفا موارد زیر را بررسی کنید:</p>
+            <ul>
+              <li>اتصال اینترنت</li>
+              <li>نام صحیح فایل</li>
+              <li>وجود فایل در پوشه pages/</li>
+            </ul>
+          </div>
+        `;
+        document.getElementById('contentArea').innerHTML = errorHTML;
+      }
+    </script>
+  </body>
+</html>
